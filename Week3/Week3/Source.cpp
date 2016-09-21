@@ -63,7 +63,7 @@ bool isInsideCircle(const double x, const double y)
 
 	const double f = (x - x_c)*(x - x_c) + (y - y_c)*(y - y_c) - r * r;
 
-	if ( f < 80 && f > -80) return true;
+	if (f < 80 && f > -80) return true;
 	else return false;
 }
 
@@ -97,26 +97,29 @@ int main(void)
 		std::fill_n(pixels, width*height * 3, 1.0f);	// white background
 
 
-		for (int i = 270; i < 400; i++ )
-		drawthinkPixel(i-250, i, 1.0f, 0.0f, 0.0f);
+		for (int i = 270; i < 400; i++)
+			drawthinkPixel(i - 250, i, 1.0f, 0.0f, 0.0f);
 		// thick line
 
 
 		drawLine(460, 400, 540, 350, 1.0f, 0.0f, 0.0f);
-		drawLine(460, 300, 540, 350,  1.0f, 0.0f, 0.0f);
+		drawLine(460, 300, 540, 350, 1.0f, 0.0f, 0.0f);
 		for (int i = 300; i < 400; i++)
 		{
 			drawPixel(460, i, 1.0f, 0.0f, 0.0f);
 		} // triangle
 
 
-		drawLine(60, 150, 150, 150, 1.0f, 0.0f, 0.0f);
-		drawLine(60, 60, 150, 60, 1.0f, 0.0f, 0.0f);
-		drawLine(30, 105, 60, 150, 1.0f, 0.0f, 0.0f);
-		drawLine(150, 150, 190, 105, 1.0f, 0.0f, 0.0f);
+		drawLine(60, 60, 130, 60, 1.0f, 0.0f, 0.0f);
+
+		drawLine(30, 105, 95, 150, 1.0f, 0.0f, 0.0f);
+
+		drawLine(95, 150, 160, 110, 1.0f, 0.0f, 0.0f); // right- up
+
 		drawLine(30, 105, 60, 60, 1.0f, 0.0f, 0.0f);
-		drawLine(150, 60, 190, 105, 1.0f, 0.0f, 0.0f);
-		// six??
+
+		drawLine(130, 60, 160, 110, 1.0f, 0.0f, 0.0f);
+		// pentagon
 
 
 
@@ -153,9 +156,9 @@ int main(void)
 
 		for (int i = 270; i < 400; i++)
 			for (int j = 30; j < 120; j++)
-		{
-			drawPixel(i, j, 1.0f, 0.0f, 0.0f);
-		} // filled rectangle
+			{
+				drawPixel(i, j, 1.0f, 0.0f, 0.0f);
+			} // filled rectangle
 
 
 
@@ -174,4 +177,3 @@ int main(void)
 
 	return 0;
 }
-
